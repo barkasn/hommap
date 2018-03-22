@@ -1,0 +1,10 @@
+Package: hommap
+Title: Functions and precalculated data for getting homology mapping between organisms
+Version: 0.0.0.9000
+Authors@R: person("Nikolas", "Barkas", email = "barkas.work@outlook.com", role = c("aut", "cre"))
+Description: Functions and precalculated data for getting homology mapping between organisms
+Depends: R (>= 3.4.3)
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1
