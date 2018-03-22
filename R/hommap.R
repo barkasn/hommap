@@ -12,7 +12,7 @@ hommap.mm.2.hs.symbols <- function() {
     ## remove genes without mapping
     head(hs.mm.homologue)
     hs.mm.homologue <- as.tibble(hs.mm.homologue)
-    hs.mm.homologue %>% filter(hsapiens_homolog_associated_gene_name != "") 
+    hs.mm.homologue %>% filter(hsapiens_homolog_associated_gene_name != "") -> hs.mm.homologue
     ## return
     hs.mm.homologue
 }
