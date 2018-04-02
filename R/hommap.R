@@ -17,9 +17,24 @@ hommap.mm.2.hs.symbols <- function() {
     hs.mm.homologue
 }
 
+hommap.mm.symbol.2.entrezID <- function() {
+    require('org.Mm.eg.db')
+    require('reshape2')
+    x <- org.Mm.egSYMBOL
+    mapped_genes <- mappedkeys(x)
+    xx <- as.list(x[mapped_genes])
+    entrez2symbol <- melt(xx)
+    rm(x, xx)
+    names(entrez2symbol) <- c('symbol','entrezID')
+    entrez2symbol
+}
+
 
 #' Used during development to generate data objects that are saved with this package
 generateDataObjects <- function() {
     hs.mm.homologue <- hommap.mm.2.hs.symbols()
     save(hs.mm.homologue,file='../data/hs.mm.homologue.RData')
+
+    mm.entrez2symbol <- hommap.mm.symbol.2.entrezID()
+    save(mm.entrez2symbol,file='../data/mm.entrez2symbol.RData')
 }
